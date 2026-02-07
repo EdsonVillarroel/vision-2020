@@ -8,12 +8,23 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background: url('glasses.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('glasses.jpg') center/cover no-repeat;
+  filter: blur(8px) brightness(0.4);
+  transform: scale(1.05);
+  z-index: -1;
 }
 
 .card {
