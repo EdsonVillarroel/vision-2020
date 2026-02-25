@@ -33,40 +33,98 @@
 <body>
 
   <div class="card">
-    <img src="logo.png" alt="Visión 20/20 HD" class="logo" />
 
+    <!-- Perfil -->
+    <img src="logo.png" alt="Visión 20/20 HD" class="logo" />
     <h1>Visión 20/20 HD</h1>
     <p class="subtitle">Ver Bien, Sentirte Bien</p>
 
-    <a class="link whatsapp" href="https://wa.me/59168803830?text=👋%20Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios%20de%20óptica%20👓%20¿Pueden%20ayudarme?" target="_blank"
+    <!-- Catálogo destacado -->
+    <section class="catalog-section">
+      <h2 class="section-title">Catálogo</h2>
+      <div class="catalog-scroll">
+
+        <a class="cat-card" href="catalogo/monturas-hombres.html">
+          <div class="cat-thumb men">
+            <i class="fa-solid fa-glasses"></i>
+          </div>
+          <span>Monturas H.</span>
+        </a>
+
+        <a class="cat-card" href="catalogo/monturas-mujeres.html">
+          <div class="cat-thumb women">
+            <i class="fa-solid fa-glasses"></i>
+          </div>
+          <span>Monturas M.</span>
+        </a>
+
+        <a class="cat-card" href="catalogo/monturas-ninos.html">
+          <div class="cat-thumb kids">
+            <i class="fa-solid fa-glasses"></i>
+          </div>
+          <span>Niños</span>
+        </a>
+
+        <a class="cat-card" href="catalogo/gafas-hombres.html">
+          <div class="cat-thumb sun-men">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <span>Sol H.</span>
+        </a>
+
+        <a class="cat-card" href="catalogo/gafas-mujeres.html">
+          <div class="cat-thumb sun-women">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <span>Sol M.</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Redes sociales en grilla -->
+    <section class="social-section">
+      <h2 class="section-title">Síguenos</h2>
+      <div class="social-grid">
+
+        <a class="social-card facebook" href="https://www.facebook.com/profile.php?id=61587181355825" target="_blank"
+           onclick="gtag('event', 'click', { event_category: 'social', event_label: 'Facebook' })">
+          <i class="fa-brands fa-facebook-f"></i>
+          <span>Facebook</span>
+        </a>
+
+        <a class="social-card instagram" href="https://www.instagram.com/opticavision.20hd?igsh=MXB2cHRyOGpsb2ZuaQ==" target="_blank"
+           onclick="gtag('event', 'click', { event_category: 'social', event_label: 'Instagram' })">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a class="social-card tiktok" href="https://www.tiktok.com/@vision2020hd?_r=1&_t=ZS-93eGcW6gZ7w" target="_blank"
+           onclick="gtag('event', 'click', { event_category: 'social', event_label: 'TikTok' })">
+          <i class="fa-brands fa-tiktok"></i>
+          <span>TikTok</span>
+        </a>
+
+        <a class="social-card maps" href="https://www.google.com/maps?q=-17.779682159423828,-63.182552337646484&z=17&hl=es" target="_blank"
+           onclick="gtag('event', 'click', { event_category: 'social', event_label: 'Ubicacion' })">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Ubicación</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- WhatsApp destacado -->
+    <a class="btn-whatsapp" href="https://wa.me/59168803830?text=👋%20Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20sus%20servicios%20de%20óptica%20👓%20¿Pueden%20ayudarme?" target="_blank"
        onclick="gtag('event', 'click', { event_category: 'social', event_label: 'WhatsApp' })">
-      <i class="fa-brands fa-whatsapp"></i> WhatsApp
-    </a>
-
-    <a class="link facebook" href="https://www.facebook.com/profile.php?id=61587181355825" target="_blank"
-       onclick="gtag('event', 'click', { event_category: 'social', event_label: 'Facebook' })">
-      <i class="fa-brands fa-facebook-f"></i> Facebook
-    </a>
-
-    <a class="link instagram" href="https://www.instagram.com/opticavision.20hd?igsh=MXB2cHRyOGpsb2ZuaQ==" target="_blank"
-       onclick="gtag('event', 'click', { event_category: 'social', event_label: 'Instagram' })">
-      <i class="fa-brands fa-instagram"></i> Instagram
-    </a>
-
-    <a class="link tiktok" href="https://www.tiktok.com/@vision2020hd?_r=1&_t=ZS-93eGcW6gZ7w" target="_blank"
-       onclick="gtag('event', 'click', { event_category: 'social', event_label: 'TikTok' })">
-      <i class="fa-brands fa-tiktok"></i> TikTok
-    </a>
-
-    <a class="link location" href="https://www.google.com/maps?q=-17.779682159423828,-63.182552337646484&z=17&hl=es" target="_blank"
-       onclick="gtag('event', 'click', { event_category: 'social', event_label: 'Ubicacion' })">
-      <i class="fa-solid fa-location-dot"></i> Ubicación
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Directo
     </a>
 
     <footer>
       <p>Calle Seoane #60 entre Av. 24 de Septiembre y calle libertad</p>
-      <p>Santa Cruz - Bolivia</p>
+      <p>Santa Cruz · Bolivia</p>
     </footer>
+
   </div>
 
 </body>
