@@ -1,19 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+/* ══════════════════════════════
+   BASE
+   ══════════════════════════════ */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* ══════════════════════════════
+   FONDO CON BLUR — compartido index + catálogo
+   ══════════════════════════════ */
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('glasses.jpg') center/cover no-repeat fixed;
   min-height: 100vh;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 24px 16px 40px;
   position: relative;
 }
 
@@ -21,10 +22,21 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: url('glasses.jpg') center/cover no-repeat;
+  background: var(--bg-image) center/cover no-repeat;
   filter: blur(8px) brightness(0.4);
   transform: scale(1.05);
   z-index: -1;
+}
+
+/* ══════════════════════════════
+   INDEX — layout centrado
+   ══════════════════════════════ */
+body.page-index {
+  --bg-image: url('../img/glasses.jpg');
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px 40px;
 }
 
 /* ── Card principal ── */
@@ -38,7 +50,7 @@ body::before {
   text-align: center;
 }
 
-/* ── Logo ── */
+/* ── Logo index ── */
 .logo {
   width: 100px;
   height: 100px;
@@ -51,7 +63,6 @@ body::before {
 
 /* ── Título ── */
 h1 {
-  font-family: 'Poppins', sans-serif;
   font-weight: 800;
   font-size: 26px;
   color: #2c2118;
@@ -77,7 +88,7 @@ h1 {
 }
 
 /* ══════════════════════════════
-   CATÁLOGO — scroll horizontal
+   CATÁLOGO — scroll horizontal (index)
    ══════════════════════════════ */
 .catalog-section {
   margin-bottom: 24px;
@@ -120,7 +131,6 @@ h1 {
   font-size: 28px;
 }
 
-/* Colores de categorías */
 .cat-thumb.men       { background: #dce8f5; color: #2d6db5; }
 .cat-thumb.women     { background: #fde8ee; color: #c2385a; }
 .cat-thumb.kids      { background: #e5f5e0; color: #3a8a3a; }
@@ -128,7 +138,7 @@ h1 {
 .cat-thumb.sun-women { background: #f3e5f5; color: #8e44ad; }
 
 /* ══════════════════════════════
-   REDES — grilla 2×2
+   REDES SOCIALES — grilla 2×2
    ══════════════════════════════ */
 .social-section {
   margin-bottom: 16px;
@@ -162,13 +172,10 @@ h1 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.social-card:active {
-  transform: scale(0.97);
-}
+.social-card:active { transform: scale(0.97); }
 
 .social-card i { font-size: 28px; }
 
-/* Colores de redes */
 .social-card.facebook  { background: #e8f0fd; color: #1877F2; border-color: #c5d8fa; }
 .social-card.instagram { background: #fce8ef; color: #c13584; border-color: #f5c0d4; }
 .social-card.tiktok    { background: #f0f0f0; color: #010101; border-color: #d5d5d5; }
@@ -209,30 +216,161 @@ footer {
   line-height: 1.7;
 }
 
-
 /* ══════════════════════════════
-   Sección Catálogo en index (legacy - no usada)
+   PÁGINAS DE CATÁLOGO
    ══════════════════════════════ */
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+body.page-catalog {
+  --bg-image: url('../img/glasses.jpg');
+  padding: 0 0 40px;
 }
 
-.catalog-card {
+/* ── Header catálogo ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #f5d565;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity 0.2s;
+}
+
+.back-btn:hover { opacity: 0.8; }
+
+.header-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* ── Main catálogo ── */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+body.page-catalog h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ── Grilla de fotos ── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.photo-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  transition: transform 0.2s;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  background: #faf8f4;
-  border: 2px solid #e8e0d0;
-  border-radius: 14px;
-  padding: 14px 8px;
-  text-decoration: none;
-  color: #2c2c2c;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.2s ease;
 }
 
-.catalog-icon { font-size: 26px; }
+.photo-card:hover { transform: translateY(-4px); }
+
+.photo-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Info del producto ── */
+.product-info {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #2c2118;
+}
+
+.product-detail {
+  font-size: 12px;
+  color: #888;
+}
+
+.product-detail span {
+  font-weight: 600;
+  color: #555;
+}
+
+.product-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #b38728;
+  margin-top: 4px;
+}
+
+.btn-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: opacity 0.2s;
+}
+
+.btn-buy:hover { opacity: 0.88; }
+.btn-buy i { font-size: 16px; }
+
+.photo-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  text-align: center;
+  padding: 8px 6px;
+}
+
+/* ── Estado vacío ── */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255,255,255,0.7);
+}
+
+.empty-state i {
+  font-size: 48px;
+  color: #b38728;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.empty-state p { font-size: 15px; }

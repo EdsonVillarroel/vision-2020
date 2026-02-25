@@ -8,7 +8,7 @@
   <!-- Open Graph / WhatsApp / Facebook -->
   <meta property="og:title" content="Visión 20/20 HD" />
   <meta property="og:description" content="Óptica · Exámenes visuales · Lentes — Ver Bien, Sentirte Bien" />
-  <meta property="og:image" content="https://edsonvillarroel.github.io/vision-2020/logo.png" />
+  <meta property="og:image" content="https://edsonvillarroel.github.io/vision-2020/assets/img/logo.png" />
   <meta property="og:url" content="https://edsonvillarroel.github.io/vision-2020/" />
   <meta property="og:type" content="website" />
 
@@ -16,7 +16,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Visión 20/20 HD" />
   <meta name="twitter:description" content="Óptica · Exámenes visuales · Lentes — Ver Bien, Sentirte Bien" />
-  <meta name="twitter:image" content="https://edsonvillarroel.github.io/vision-2020/logo.png" />
+  <meta name="twitter:image" content="https://edsonvillarroel.github.io/vision-2020/assets/img/logo.png" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KS7HSMWB9"></script>
@@ -28,14 +28,14 @@
   </script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body>
+<body class="page-index">
 
   <div class="card">
 
     <!-- Perfil -->
-    <img src="logo.png" alt="Visión 20/20 HD" class="logo" />
+    <img src="assets/img/logo.png" alt="Visión 20/20 HD" class="logo" />
     <h1>Visión 20/20 HD</h1>
     <p class="subtitle">Ver Bien, Sentirte Bien</p>
 
@@ -44,35 +44,40 @@
       <h2 class="section-title">Catálogo</h2>
       <div class="catalog-scroll">
 
-        <a class="cat-card" href="catalogo/monturas-hombres.html">
+        <a class="cat-card" href="catalog/frames-men.html"
+           onclick="gtag('event', 'click', { event_category: 'catalogo', event_label: 'Monturas Hombres' })">
           <div class="cat-thumb men">
             <i class="fa-solid fa-glasses"></i>
           </div>
           <span>Monturas H.</span>
         </a>
 
-        <a class="cat-card" href="catalogo/monturas-mujeres.html">
+        <a class="cat-card" href="catalog/frames-women.html"
+           onclick="gtag('event', 'click', { event_category: 'catalogo', event_label: 'Monturas Mujeres' })">
           <div class="cat-thumb women">
             <i class="fa-solid fa-glasses"></i>
           </div>
           <span>Monturas M.</span>
         </a>
 
-        <a class="cat-card" href="catalogo/monturas-ninos.html">
+        <a class="cat-card" href="catalog/frames-kids.html"
+           onclick="gtag('event', 'click', { event_category: 'catalogo', event_label: 'Monturas Ninos' })">
           <div class="cat-thumb kids">
             <i class="fa-solid fa-glasses"></i>
           </div>
           <span>Niños</span>
         </a>
 
-        <a class="cat-card" href="catalogo/gafas-hombres.html">
+        <a class="cat-card" href="catalog/sunglasses-men.html"
+           onclick="gtag('event', 'click', { event_category: 'catalogo', event_label: 'Gafas Hombres' })">
           <div class="cat-thumb sun-men">
             <i class="fa-solid fa-sun"></i>
           </div>
           <span>Sol H.</span>
         </a>
 
-        <a class="cat-card" href="catalogo/gafas-mujeres.html">
+        <a class="cat-card" href="catalog/sunglasses-women.html"
+           onclick="gtag('event', 'click', { event_category: 'catalogo', event_label: 'Gafas Mujeres' })">
           <div class="cat-thumb sun-women">
             <i class="fa-solid fa-sun"></i>
           </div>
