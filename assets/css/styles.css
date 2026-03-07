@@ -88,66 +88,65 @@ h1 {
 }
 
 /* ══════════════════════════════
-   CATÁLOGO — scroll horizontal (index)
+   CATÁLOGO — grilla 2×2 (index)
    ══════════════════════════════ */
 .catalog-section {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
-.catalog-scroll {
-  display: flex;
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
-  overflow-x: auto;
-  padding-bottom: 6px;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
-
-.catalog-scroll::-webkit-scrollbar { display: none; }
 
 .cat-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   text-decoration: none;
   color: #2c2118;
   font-size: 12px;
   font-weight: 600;
-  flex-shrink: 0;
-  width: 82px;
-  transition: transform 0.2s;
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 8px;
+  border: 1.5px solid #f0e8d8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.cat-card:hover { transform: translateY(-3px); }
+.cat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.cat-card:active { transform: scale(0.97); }
 
 .cat-thumb {
-  width: 82px;
-  height: 82px;
-  border-radius: 16px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #fdf0d5;
+  color: #c17d2a;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 24px;
 }
 
-.cat-thumb.men       { background: #dce8f5; color: #2d6db5; }
-.cat-thumb.women     { background: #fde8ee; color: #c2385a; }
-.cat-thumb.kids      { background: #e5f5e0; color: #3a8a3a; }
-.cat-thumb.sun-men   { background: #fff3d6; color: #b38728; }
-.cat-thumb.sun-women { background: #f3e5f5; color: #8e44ad; }
-
 /* ══════════════════════════════
-   REDES SOCIALES — grilla 2×2
+   REDES SOCIALES — fila de 4
    ══════════════════════════════ */
 .social-section {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .social-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
 .social-card {
@@ -155,13 +154,13 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   text-decoration: none;
-  border-radius: 18px;
-  padding: 20px 12px;
-  font-size: 13px;
+  border-radius: 14px;
+  padding: 14px 6px;
+  font-size: 11px;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
   border: 1.5px solid rgba(0, 0, 0, 0.06);
   transition: transform 0.2s, box-shadow 0.2s;
   cursor: pointer;
@@ -169,12 +168,12 @@ h1 {
 
 .social-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .social-card:active { transform: scale(0.97); }
 
-.social-card i { font-size: 28px; }
+.social-card i { font-size: 22px; }
 
 .social-card.facebook  { background: #e8f0fd; color: #1877F2; border-color: #c5d8fa; }
 .social-card.instagram { background: #fce8ef; color: #c13584; border-color: #f5c0d4; }
@@ -220,8 +219,12 @@ footer {
    PÁGINAS DE CATÁLOGO
    ══════════════════════════════ */
 body.page-catalog {
-  --bg-image: url('../img/glasses.jpg');
+  background: #f5f0eb;
   padding: 0 0 40px;
+}
+
+body.page-catalog::before {
+  display: none;
 }
 
 /* ── Header catálogo ── */
@@ -229,9 +232,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 20px;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);
+  padding: 14px 20px;
+  background: #fff;
+  border-bottom: 1px solid #f0e8d8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -241,18 +245,18 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #f5d565;
+  color: #2c2118;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   transition: opacity 0.2s;
 }
 
-.back-btn:hover { opacity: 0.8; }
+.back-btn:hover { opacity: 0.6; }
 
 .header-logo {
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
   border-radius: 50%;
 }
@@ -265,12 +269,11 @@ main {
 }
 
 body.page-catalog h1 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin-bottom: 24px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  color: #2c2118;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 /* ── Grilla de fotos ── */
