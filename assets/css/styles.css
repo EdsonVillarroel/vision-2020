@@ -16,6 +16,7 @@ body {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   position: relative;
+  background-color: #ffffff;
 }
 
 body::before {
@@ -32,11 +33,11 @@ body::before {
    INDEX — layout centrado
    ══════════════════════════════ */
 body.page-index {
-  background: #f2ede8;
+  /* background: #f2ede8; */
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 24px 16px 40px;
+  /* padding: 24px 16px 40px; */
 }
 
 body.page-index::before {
@@ -50,7 +51,7 @@ body.page-index::before {
   max-width: 420px;
   border-radius: 28px;
   padding: 36px 24px 28px;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  /* box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12); */
   text-align: center;
 }
 
@@ -233,7 +234,7 @@ footer {
    PÁGINAS DE CATÁLOGO
    ══════════════════════════════ */
 body.page-catalog {
-  background: #f5f0eb;
+  background: #fff;
   padding: 0 0 40px;
 }
 
