@@ -420,6 +420,8 @@ body.page-detail::before { display: none; }
   position: relative;
   background: #f5f0eb;
   overflow: hidden;
+  margin: 0 24px;
+  border-radius: 16px;
 }
 
 .carousel-track {
