@@ -5,7 +5,7 @@ const PRODUCTS = {
     tipo: 'Completo',
     lente: 52, puente: 18, patilla: 140,
     price: 150,
-    imgs: ['../assets/img/catalog/frames/men/men-01.jpeg'],
+    imgs: ['../assets/img/catalog/frames/men/men-01.jpeg', '../assets/img/catalog/frames/men/men-02.jpeg'],
     desc: 'Montura clásica de acetato de alta calidad. Diseño atemporal que combina elegancia y comodidad. Ideal para uso diario, perfecta para rostros ovalados y rectangulares.',
     wa: 'https://wa.me/59168803830?text=Hola!%20Me%20interesa%20la%20*Montura%20Cl%C3%A1sica*%20para%20hombre%20(Bs.%20150).%20%C2%BFEst%C3%A1%20disponible%3F%0AImagen%3A%20https://edsonvillarroel.github.io/vision-2020/assets/img/catalog/frames/men/men-01.jpeg',
     back: 'frames-men.html',
