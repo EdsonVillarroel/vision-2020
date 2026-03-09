@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Producto — Visión 20/20 HD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body class="page-detail">
+
+  <header>
+    <a class="back-btn" id="back-btn" href="../index.html">
+      <i class="fa-solid fa-arrow-left"></i> Volver
+    </a>
+    <span class="header-title" id="header-title"></span>
+    <img src="../assets/img/logo.png" alt="Visión 20/20 HD" class="header-logo" />
+  </header>
+
+  <div class="product-hero">
+    <div class="carousel-track" id="carousel-track"></div>
+    <button class="carousel-btn prev" id="btn-prev" onclick="slide(-1)">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button class="carousel-btn next" id="btn-next" onclick="slide(1)">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+    <div class="carousel-dots" id="carousel-dots"></div>
+  </div>
+
+  <div class="detail-body">
+    <p class="detail-name" id="detail-name"></p>
+    <p class="detail-price" id="detail-price"></p>
+    <p class="detail-desc" id="detail-desc"></p>
+
+    <div class="specs-section">
+      <p class="specs-title">Especificaciones</p>
+      <table class="specs-table">
+        <tr><td>Material</td><td id="spec-material"></td></tr>
+        <tr><td>Tipo de montura</td><td id="spec-tipo"></td></tr>
+      </table>
+    </div>
+
+    <div class="specs-section">
+      <p class="specs-title">Medidas</p>
+      <table class="specs-table">
+        <tr><td>Ancho lente</td><td id="spec-lente"></td></tr>
+        <tr><td>Puente</td><td id="spec-puente"></td></tr>
+        <tr><td>Patilla</td><td id="spec-patilla"></td></tr>
+      </table>
+    </div>
+
+    <a class="btn-reserve-full" id="btn-wa" href="#" target="_blank"
+       onclick="gtag('event', 'whatsapp_product', { event_category: 'catalog', event_label: document.getElementById('detail-name').textContent })">
+      <i class="fa-brands fa-whatsapp"></i> Reservar por WhatsApp
+    </a>
+    <a class="btn-back-catalog" id="btn-back-catalog" href="#">Volver al catálogo</a>
+  </div>
+
+  <script src="products-data.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const p = PRODUCTS[id];
+
+    if (!p) {
+      document.body.innerHTML = '<p style="padding:40px;text-align:center">Producto no encontrado.</p>';
+    } else {
+      document.title = p.name + ' — Visión 20/20 HD';
+      document.getElementById('header-title').textContent = p.name;
+      document.getElementById('detail-name').textContent = p.name;
+      document.getElementById('detail-price').textContent = 'Bs. ' + p.price;
+      document.getElementById('detail-desc').textContent = p.desc;
+      document.getElementById('spec-material').textContent = p.material;
+      document.getElementById('spec-tipo').textContent = p.tipo;
+      document.getElementById('spec-lente').textContent = p.lente + ' mm';
+      document.getElementById('spec-puente').textContent = p.puente + ' mm';
+      document.getElementById('spec-patilla').textContent = p.patilla + ' mm';
+      document.getElementById('btn-wa').href = p.wa;
+      document.getElementById('back-btn').href = p.back;
+      document.getElementById('btn-back-catalog').href = p.back;
+
+      const track = document.getElementById('carousel-track');
+      const dots = document.getElementById('carousel-dots');
+      p.imgs.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = p.name;
+        track.appendChild(img);
+
+        const dot = document.createElement('span');
+        dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => goTo(i);
+        dots.appendChild(dot);
+      });
+
+      if (p.imgs.length <= 1) {
+        document.getElementById('btn-prev').style.display = 'none';
+        document.getElementById('btn-next').style.display = 'none';
+        dots.style.display = 'none';
+      }
+    }
+
+    let current = 0;
+
+    function goTo(index) {
+      const p_data = PRODUCTS[new URLSearchParams(location.search).get('id')];
+      current = Math.max(0, Math.min(index, p_data.imgs.length - 1));
+      document.getElementById('carousel-track').style.transform = 'translateX(-' + (current * 100) + '%)';
+      document.querySelectorAll('.carousel-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current));
+    }
+
+    function slide(dir) { goTo(current + dir); }
+  </script>
+
+</body>
+</html>
